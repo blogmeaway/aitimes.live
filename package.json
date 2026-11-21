@@ -1,0 +1,13 @@
+{
+  "name": "aitimes-live",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI TIMES (aitimes.live) — Your dAIly journal automade.",
+  "scripts": {
+    "publish:edition": "node scripts/publish-edition.mjs"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
