@@ -1,8 +1,19 @@
+/**
+ * AI TIMES (aitimes.live) — Autonomous Daily Edition Generator
+ * Reads CONSTITUTION.md + live World & AI RSS feeds, synthesizes bilingual EN/RO
+ * editorial content + conceptual SVG editorial plate via Gemini API, and updates
+ * data/editions.json (keeping the last 30 editions in archive).
+ */
+
 import fs from "node:fs/promises";
 import path from "node:path";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const MODEL_NAME = process.env.GEMINI_MODEL || "gemini-3.8-flash";
+const MODEL_CANDIDATES = [
+  process.env.GEMINI_MODEL || "gemini-3.8-flash",
+  "gemini-3.8-flash-lite",
+  "gemini-3.8-pro"
+];
 
 const WORLD_FEEDS = [
   { name: "BBC World", url: "https://feeds.bbci.co.uk/news/world/rss.xml" },
@@ -98,7 +109,8 @@ async function generateEditionWithGemini({ constitution, dateInfo, issueNumber, 
     throw new Error("Missing GEMINI_API_KEY environment variable.");
   }
 
-  const prompt = `You are The AI Columnist, autonomous Editor-in-Chief of AI TIMES (aitimes.live — "Your dAIly journal automade.").
+  const prompt = `
+You are The AI Columnist, autonomous Editor-in-Chief of AI TIMES (aitimes.live — "Your dAIly journal automade.").
 Follow this Editorial Constitution strictly:
 ${constitution}
 
@@ -112,30 +124,88 @@ ${JSON.stringify(worldPool.slice(0, 16), null, 2)}
 VERIFIED AI INDUSTRY RSS HEADLINES:
 ${JSON.stringify(aiPool.slice(0, 16), null, 2)}
 
-Return ONLY valid JSON matching the schema with "en", "ro", and "artworkSvg" (5 items in people, 5 items in aiWorld).`;
+TASK:
+Return ONLY valid JSON (no markdown fences) matching this exact schema:
+{
+  "en": {
+    "issue": "Issue No. ${String(issueNumber).padStart(2, "0")}",
+    "date": "${dateInfo.en}",
+    "headline": "Compelling broadsheet lead essay headline",
+    "subhead": "One-sentence reflective deck summarizing the column's thesis",
+    "artCaption": "Editorial Plate ${String(issueNumber).padStart(2, "0")}: One-sentence caption describing the conceptual artwork",
+    "paragraphs": ["Opening paragraph (hook)", "Second paragraph (connecting real wire signals)", "Third paragraph (direction & human takeaway)"],
+    "sources": "Comma-separated list of outlets read from the RSS pool",
+    "people": [
+      { "category": "Short Topic Tag", "title": "Clean headline", "why": "One plain-English sentence on why this matters to everyday people", "url": "Exact URL from world RSS pool" }
+    ],
+    "aiWorld": [
+      { "tag": "Short AI Tag", "title": "Clean AI industry headline", "takeaway": "One crisp analytical sentence on the real significance", "url": "Exact URL from AI RSS pool" }
+    ]
+  },
+  "ro": {
+    "issue": "Ediția Nr. ${String(issueNumber).padStart(2, "0")}",
+    "date": "${dateInfo.ro}",
+    "headline": "Natural, literary Romanian translation/adaptation of the lead headline",
+    "subhead": "Romanian subhead",
+    "artCaption": "Planșa Editorială ${String(issueNumber).padStart(2, "0")}: Romanian caption",
+    "paragraphs": ["Paragraph 1 in natural Romanian", "Paragraph 2 in natural Romanian", "Paragraph 3 in natural Romanian"],
+    "sources": "Romanian source attribution line",
+    "people": [
+      { "category": "Tag RO", "title": "Headline RO", "why": "De ce contează (1 propoziție clară)", "url": "Same URL" }
+    ],
+    "aiWorld": [
+      { "tag": "Tag AI RO", "title": "Headline AI RO", "takeaway": "Pe scurt (1 propoziție)", "url": "Same URL" }
+    ]
+  },
+  "artworkSvg": "<svg viewBox=\\"0 0 800 450\\" class=\\"w-full h-full object-cover\\" xmlns=\\"http://www.w3.org/2000/svg\\">...custom minimalist geometric editorial illustration matching today's essay theme using dark slate #141821, warm gold #fbbf24, and crimson #dc2626...</svg>"
+}
 
-  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
-  const res = await fetch(endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: {
-        temperature: 0.65,
-        responseMimeType: "application/json"
+RULES:
+- "people" MUST contain exactly 5 distinct items grounded in the World RSS pool.
+- "aiWorld" MUST contain exactly 5 distinct items grounded in the AI Industry RSS pool.
+- "artworkSvg" MUST be valid self-contained inline SVG (viewBox="0 0 800 450") with no external images or scripts.
+`;
+
+  let lastError = null;
+
+  for (const model of MODEL_CANDIDATES) {
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
+      console.log(`Calling Gemini model "${model}" (attempt ${attempt}/2)...`);
+
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: {
+            temperature: 0.65,
+            responseMimeType: "application/json"
+          }
+        })
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+        const cleaned = rawText.replace(/^```json\s*/i, "").replace(/```\s*$/i, "").trim();
+        return JSON.parse(cleaned);
       }
-    })
-  });
 
-  if (!res.ok) {
-    const errText = await res.text();
-    throw new Error(`Gemini API error (${res.status}): ${errText}`);
+      const errText = await res.text();
+      lastError = new Error(`Gemini API error (${res.status}) on ${model}: ${errText}`);
+      console.warn(lastError.message);
+
+      // Wait 4 seconds before retrying on temporary overload (503 / 429)
+      if (res.status === 503 || res.status === 429) {
+        await new Promise((r) => setTimeout(r, 4000));
+      } else {
+        break;
+      }
+    }
   }
 
-  const data = await res.json();
-  const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
-  const cleaned = rawText.replace(/^```json\s*/i, "").replace(/```\s*$/i, "").trim();
-  return JSON.parse(cleaned);
+  throw lastError;
 }
 
 async function main() {
@@ -158,10 +228,13 @@ async function main() {
       ? prevLatest.issueNumber
       : (prevLatest?.issueNumber || 0) + 1;
 
+  console.log(`Fetching RSS feeds for ${dateInfo.iso} (Issue #${nextIssueNumber})...`);
   const [worldPool, aiPool] = await Promise.all([
     fetchFeedPool(WORLD_FEEDS),
     fetchFeedPool(AI_FEEDS)
   ]);
+
+  console.log(`Collected ${worldPool.length} world items and ${aiPool.length} AI industry items.`);
 
   const generated = await generateEditionWithGemini({
     constitution,
@@ -179,12 +252,14 @@ async function main() {
     artworkSvg: generated.artworkSvg
   };
 
+  // Retain the 30 most recent editions in the archive
   const sortedKeys = Object.keys(store.editions).sort().reverse();
   for (const oldKey of sortedKeys.slice(30)) {
     delete store.editions[oldKey];
   }
 
   await fs.writeFile(editionsPath, JSON.stringify(store, null, 2) + "\n", "utf8");
+  console.log(`Successfully published AI TIMES edition for ${dateInfo.iso}.`);
 }
 
 main().catch((err) => {
