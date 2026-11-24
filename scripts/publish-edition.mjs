@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const MODEL_NAME = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+const MODEL_NAME = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 
 const WORLD_FEEDS = [
   { name: "BBC World", url: "https://feeds.bbci.co.uk/news/world/rss.xml" },
