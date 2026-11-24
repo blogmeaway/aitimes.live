@@ -9,11 +9,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const MODEL_CANDIDATES = [
-  process.env.GEMINI_MODEL || "gemini-3.8-flash",
-  "gemini-3.8-flash-lite",
-  "gemini-3.8-pro"
-];
+const MODEL_NAME = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 
 const WORLD_FEEDS = [
   { name: "BBC World", url: "https://feeds.bbci.co.uk/news/world/rss.xml" },
@@ -166,46 +162,28 @@ RULES:
 - "artworkSvg" MUST be valid self-contained inline SVG (viewBox="0 0 800 450") with no external images or scripts.
 `;
 
-  let lastError = null;
-
-  for (const model of MODEL_CANDIDATES) {
-    for (let attempt = 1; attempt <= 2; attempt++) {
-      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
-      console.log(`Calling Gemini model "${model}" (attempt ${attempt}/2)...`);
-
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: {
-            temperature: 0.65,
-            responseMimeType: "application/json"
-          }
-        })
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
-        const cleaned = rawText.replace(/^```json\s*/i, "").replace(/```\s*$/i, "").trim();
-        return JSON.parse(cleaned);
+  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
+  const res = await fetch(endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: {
+        temperature: 0.65,
+        responseMimeType: "application/json"
       }
+    })
+  });
 
-      const errText = await res.text();
-      lastError = new Error(`Gemini API error (${res.status}) on ${model}: ${errText}`);
-      console.warn(lastError.message);
-
-      // Wait 4 seconds before retrying on temporary overload (503 / 429)
-      if (res.status === 503 || res.status === 429) {
-        await new Promise((r) => setTimeout(r, 4000));
-      } else {
-        break;
-      }
-    }
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`Gemini API error (${res.status}): ${errText}`);
   }
 
-  throw lastError;
+  const data = await res.json();
+  const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+  const cleaned = rawText.replace(/^```json\s*/i, "").replace(/```\s*$/i, "").trim();
+  return JSON.parse(cleaned);
 }
 
 async function main() {
