@@ -317,158 +317,158 @@
       "en": {
         "issue": "Issue No. 03",
         "date": "Wednesday, November 25, 2026",
-        "headline": "The Synthetic Mirror: When Corporate Resurrections and Deepfakes Collide with Reality",
-        "subhead": "As executive deepfakes proliferate and corporate governance merges with political theater, the boundary between automated fiction and institutional reality dissolves.",
-        "artCaption": "Editorial Plate 03: A fragmented minimalist portrait dissolving into cascading streams of gold and crimson data nodes against a dark slate void.",
+        "headline": "The Myth of the Autonomous Hand: When Silicon Leadership Collides with Political Reality",
+        "subhead": "As boardroom dramas over executive returns collide with shifting geopolitical fault lines, the tech sector is learning that synthetic power cannot insulate itself from human gravity.",
+        "artCaption": "Editorial Plate 03: Minimalist intersecting golden vectors bending under the weight of a heavy crimson horizon, symbolizing the friction between artificial intelligence leadership and geopolitical reality.",
         "paragraphs": [
-          "We live in an era where authority can be synthetically manufactured and instantly destabilized by a viral video. The recent turbulence surrounding Nvidia, marked by executive departures, White House interventions, and swift disavowals of Ibiza deepfakes, exposes a profound systemic vulnerability. When synthetic media scales faster than institutional truth, the market reacts not to fundamentals, but to shadows cast by algorithms.",
-          "This friction extends far beyond Silicon Valley boardrooms into the bedrock of global labor and geopolitics. From landmark legal battles over cobalt mining in Congo and chaotic minimum wage protests in Venezuela to shifting migration disputes in the US and Europe, societies are buckling under the weight of unfulfilled promises and opaque resource extraction. Meanwhile, enterprise networks groan under the sheer volume of incoming agentic AI workloads, mirroring the chaos of our physical supply chains.",
-          "The imperative for citizens and institutions alike is to reclaim verification as a core democratic right. As tidal platforms purge millions of automated tracks and publishers warn against opaque generative features in creative suites, we must draw a hard line between augmentation and automated deception. Transparency is no longer a technical luxury; it is the sole remaining anchor holding our shared reality together."
+          "The intersection of artificial intelligence, high-stakes corporate governance, and state power is producing a new class of reality checks for the tech elite. Across the globe, from the sudden political friction surrounding Nvidia's leadership shifts to the quiet administrative pressures straining enterprise networks, the illusion of digital exceptionalism is fracturing. Technology is no longer an isolated sandbox of pure innovation; it is deeply entangled in the messy, human mechanics of supply chains, regulatory probes, and public accountability.",
+          "Consider the recent turmoil surrounding corporate leadership and public scrutiny. Headlines are dominated by questions of political influence, viral deepfakes mocking executive realities, and the tangible human costs embedded in the supply chains driving the electric vehicle and semiconductor booms—from the DRC mining lawsuits to labor disputes in Bangladesh. Meanwhile, platforms are scrambling to institute hard lines against synthetic media, as seen with Tidal's upcoming bans and the New York Times urging caution over generative Photoshop updates. These friction points signal a collective pivot: society is no longer blindly absorbing technological acceleration; it is demanding boundaries.",
+          "For the everyday citizen, this tension manifests as a quiet reckoning between convenience and control. As autonomous agent systems grow more complex and enterprise networks buckle under the weight of AI modernization, the imperative is clear. We are moving past the honeymoon phase of unchecked automation into an era where systemic governance, ethical supply chains, and transparent authorship matter more than raw compute power. The future will not be defined by how fast machines can scale, but by how responsibly human institutions govern them."
         ],
         "sources": "BBC World, Al Jazeera, NPR World, UN News, MIT Tech Review AI, The Verge AI, ArXiv CS.AI",
         "people": [
           {
-            "category": "Technology",
+            "category": "Technology & Politics",
             "title": "US attorney general dodges questions about Nvidia investigation",
-            "why": "Nvidia's market volatility and political scrutiny directly impact global tech stocks and the hardware supply chains powering everyday computing.",
+            "why": "Political entanglements in the tech sector directly impact market stability, stock values, and public trust in corporate governance.",
             "url": "https://www.bbc.co.uk/news/articles/crpdw1qx7jgxo?at_medium=RSS&at_campaign=rss"
           },
           {
-            "category": "Geopolitics",
-            "title": "Russia's own figures show almost 500,000 deaths in war in Ukraine",
-            "why": "Staggering casualty numbers underscore the profound human toll and long-term demographic scars left by ongoing European conflict.",
-            "url": "https://www.bbc.co.uk/news/articles/cmx27g533zwyo?at_medium=RSS&at_campaign=rss"
+            "category": "Labor Economics",
+            "title": "Bangladesh garment workers win 36% pay rise after weeks of protest",
+            "why": "Grassroots labor organizing continues to reshape global supply chains, proving that human workers still hold vital leverage.",
+            "url": "https://www.aljazeera.com/news/2026/11/25/bangladesh-garment-workers-win-36-pay-rise-after-weeks-of-protest?traffic_source=rss"
           },
           {
-            "category": "Global Labor",
+            "category": "Critical Minerals",
             "title": "The human cost of the electric vehicle boom is at the center of a lawsuit in Congo",
-            "why": "Local communities are fighting back against environmental degradation tied directly to the global transition toward green energy.",
+            "why": "The green energy transition faces severe legal and moral challenges over the exploitation of local mining communities.",
             "url": "https://www.npr.org/2026/11/24/nx-s1-6042912/drc-congo-mining-china-copper-colbalt-critical-minerals"
           },
           {
-            "category": "Security",
+            "category": "Geopolitics & Security",
             "title": "UK warns companies of potential Russian sabotage threat",
-            "why": "Critical infrastructure alerts remind ordinary citizens that geopolitical tensions increasingly target commercial and logistical networks.",
+            "why": "Heightened hybrid warfare risks require everyday businesses to bolster their physical and digital security infrastructure.",
             "url": "https://www.aljazeera.com/news/2026/11/25/uk-warns-companies-of-potential-russian-sabotage-threat"
           },
           {
-            "category": "Governance",
-            "title": "Kilmar Ábrego García leaves US for Spain, ending Trump deportation battle",
-            "why": "High-profile immigration legal battles continue to set precedents that ripple through national borders and family lives.",
-            "url": "https://www.bbc.co.uk/news/articles/c6808pyy5dl9o?at_medium=RSS&at_campaign=rss"
+            "category": "Humanitarian Relief",
+            "title": "World News in Brief: Vaccine crisis in Yemen, aid for Ukraine, another UNRWA staffer killed",
+            "why": "Ongoing global conflicts and systemic health crises continue to displace hundreds of thousands, demanding urgent international aid.",
+            "url": "https://news.un.org/feed/view/en/story/2026/11/1168871"
           }
         ],
         "aiWorld": [
           {
-            "tag": "Enterprise AI",
+            "tag": "Infrastructure",
             "title": "Raising the stakes for enterprise networks with AI modernization",
-            "takeaway": "Autonomous agent workflows are placing unprecedented demands on corporate IT infrastructure, forcing rapid network overhauls.",
+            "takeaway": "Agentic AI deployments are placing unprecedented strain on corporate network architecture, forcing a rapid infrastructure upgrade.",
             "url": "https://www.technologyreview.com/2026/11/24/1148091/raising-the-stakes-for-enterprise-networks-with-ai-modernization/"
           },
           {
-            "tag": "Media Integrity",
-            "title": "Tidal will start banning AI-generated music next month",
-            "takeaway": "Streaming platforms are drawing a hard line against automated audio spam to protect human artists and catalog quality.",
-            "url": "https://www.theverge.com/entertainment/1041362/tidal-ai-music-ban"
+            "tag": "Industry & Ethics",
+            "title": "Jensen Huang reportedly tells Nvidia staff it’s ‘not true’ Trump got him rehired",
+            "takeaway": "Corporate leaders are actively pushing back against narratives that entangle executive appointments with partisan political patronage.",
+            "url": "https://www.theverge.com/tech/1041571/jensen-huang-all-hands-nvidia-apology"
           },
           {
-            "tag": "Synthetic Media",
-            "title": "Jensen Huang deepfakes are the hot new AI slop",
-            "takeaway": "The rapid proliferation of hyper-realistic executive deepfakes demonstrates the urgent need for robust multi-modal detection tools.",
-            "url": "https://www.theverge.com/tech/1041222/jensen-huang-nvidia-scandal-deepfakes"
+            "tag": "Content Integrity",
+            "title": "Tidal will start banning AI-generated music next month",
+            "takeaway": "Streaming platforms are drawing a hard line against synthetic noise, preparing to purge millions of AI-generated tracks.",
+            "url": "https://www.theverge.com/entertainment/1041362/tidal-ai-music-ban"
           },
           {
             "tag": "Creative Tools",
             "title": "The New York Times warns photographers not to update Photoshop over AI features",
-            "takeaway": "Major journalistic institutions are restricting software updates to prevent unverified generative alterations in published imagery.",
+            "takeaway": "Media organizations are establishing strict operational protocols to counter opaque generative editing features in standard software.",
             "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features"
           },
           {
-            "tag": "Research",
-            "title": "MOZAIC: An Audio-Video Deepfake Benchmark for Telling What Is Fake",
-            "takeaway": "New evaluation benchmarks aim to dissect whether detection algorithms rely on robust features or superficial artifacts.",
-            "url": "https://arxiv.org/abs/2611.31301"
+            "tag": "Governance",
+            "title": "Irreducible Governance Structure for Autonomous Agent Systems",
+            "takeaway": "New computer science research underscores the urgent need for mathematically sound governance and fair allocation frameworks in multi-agent networks.",
+            "url": "https://arxiv.org/abs/2611.31284"
           }
         ]
       },
       "ro": {
         "issue": "Ediția Nr. 03",
         "date": "Miercuri, 25 noiembrie 2026",
-        "headline": "Oglinda Sintetică: Când Reînvierile Corporatiste și Deepfake-urile se Ciocnesc cu Realitatea",
-        "subhead": "Pe măsură ce deepfake-urile executive proliferează, granița dintre ficțiunea automată și realitatea instituțională se dizolvă.",
-        "artCaption": "Planșa Editorială 03: Un portret minimalist fragmentat care se dizolvă în fluxuri de date aurii și roșii pe un fundal de ardezie închisă.",
+        "headline": "Mitul Mâinii Autonome: Când Leadershipul din Silicon Valley se Ciocnește de Realitatea Politică",
+        "subhead": "Pe măsură ce dramele din boarduri privind revenirile executive se intersectează cu falii geopolitice, sectorul tehnologic învață că puterea sintetică nu se poate izola de gravitația umană.",
+        "artCaption": "Planșa Editorială 03: Vectori aurii geometrici se intersectează și se curbează sub greutatea unui orizont de culoarea roșu-crimson, simbolizând fricțiunea dintre conducerea inteligenței artificiale și realitatea geopolitică.",
         "paragraphs": [
-          "Trăim într-o eră în care autoritatea poate fi fabricată sintetic și destabilizată instantaneu de un videoclip viral. Turbulențele recente din jurul Nvidia, marcate de plecări executive, intervenții ale Casei Albe și dezmințiri rapide ale unor deepfake-uri din Ibiza, expun o vulnerabilitate sistemică profundă. Atunci când media sintetică se extinde mai repede decât adevărul instituțional, piața reacționează nu la fundamente, ci la umbrele proiectate de algoritmi.",
-          "Această fricțiune se extinde mult dincolo de sălile de ședințe din Silicon Valley, ajungând în nucleul muncii globale și al geopoliticii. De la bătălii legale istorice privind mineritul cobaltului în Congo și proteste legate de salariul minim în Venezuela, până la dispute privind imigrația în SUA și Europa, societățile se clatină sub greutatea promisiunilor neîndeplinite. Între timp, rețelele corporatiste gem sub volumul masiv de fluxuri de lucru bazate pe agenți AI autonomi.",
-          "Imperativul pentru cetățeni și instituții este să recâștige verificarea ca drept democratic fundamental. Pe măsură ce platformele elimină milioane de piese generate automat și redacțiile avertizează împotriva modificărilor generative opace, trebuie să tragem o linie clară între augmentare și înșelăciune. Transparența nu mai este un lux tehnic; este singura ancoră care ține realitatea laolaltă."
+          "Intersecția dintre inteligența artificială, guvernanța corporativă de înaltă mize și puterea statului generează o nouă clasă de teste ale realității pentru elita tehnologică. La nivel global, de la fricțiunea politică bruscă din jurul schimbărilor de conducere de la Nvidia până la presiunile administrative tăcute care suprasolicită rețelele enterprise, iluzia excepționalismului digital se fracturează. Tehnologia nu mai este un sandbox izolat de inovație pură; ea este profund implicată în mecanismele umane dezordonate ale lanțurilor de aprovizionare, anchetelor de reglementare și responsabilității publice.",
+          "Luați în considerare recenta turbulență din jurul conducerii corporative și al scrutinului public. Titlurile sunt dominate de chestiuni legate de influența politică, deepfake-uri virale care ironizează realitățile executive și costurile umane tangibile integrate în lanțurile de aprovizionare care alimentează boom-ul vehiculelor electrice și al semiconductorilor – de la procesele miniere din DRC până la litigiile de muncă din Bangladesh. Între timp, platformele se străduiesc să impună limite stricte împotriva mass-mediei sintetice, așa cum se vede în interdicțiile viitoare ale Tidal sau în recomandarea The New York Times de prudență privind actualizările generative din Photoshop. Aceste puncte de fricțiune semnalează o cotitură colectivă: societatea nu mai absoarbe orbește accelerarea tehnologică; ea cere limite.",
+          "Pentru cetățeanul de rând, această tensiune se manifestă ca o confruntare silențioasă între comoditate și control. Pe măsură ce sistemele de agenți autonomi devin tot mai complexe, iar rețelele enterprise cedează sub greutatea modernizării AI, imperativul este clar. Trecem de la faza de lună de miere a automatizării necontrolate la o eră în care guvernanța sistemică, lanțurile de aprovizionare etice și autoria transparentă contează mai mult decât puterea brută de calcul. Viitorul nu va fi definit de cât de repede pot scala mașinile, ci de cât de responsabil le guvernează instituțiile umane."
         ],
         "sources": "BBC World, Al Jazeera, NPR World, UN News, MIT Tech Review AI, The Verge AI, ArXiv CS.AI",
         "people": [
           {
-            "category": "Tehnologie",
+            "category": "Tehnologie și Politică",
             "title": "Procurorul general al SUA evită întrebările despre investigația Nvidia",
-            "why": "Volatilitatea pieței Nvidia afectează direct acțiunile globale din tech și lanțurile de aprovizionare hardware.",
+            "why": "Implicarea politică în sectorul tech afectează direct stabilitatea pieței, cotațiile bursiere și încrederea publică în guvernanța corporativă.",
             "url": "https://www.bbc.co.uk/news/articles/crpdw1qx7jgxo?at_medium=RSS&at_campaign=rss"
           },
           {
-            "category": "Geopolitică",
-            "title": "Cifrele Rusiei arată aproape 500.000 de morți în războiul din Ucraina",
-            "why": "Cifrele uluitoare ale victimelor subliniază costul uman profund și cicatricile demografice lăsate de conflictul european.",
-            "url": "https://www.bbc.co.uk/news/articles/cmx27g533zwyo?at_medium=RSS&at_campaign=rss"
+            "category": "Economia Muncii",
+            "title": "Muncitorii din confecții din Bangladesh obțin o creștere salarială de 36% după săptămâni de proteste",
+            "why": "Organizarea sindicală de bază continuă să remodeleze lanțurile globale de aprovizionare, demonstrând că lucrătorii umani dețin în continuare o pârghie vitală.",
+            "url": "https://www.aljazeera.com/news/2026/11/25/bangladesh-garment-workers-win-36-pay-rise-after-weeks-of-protest?traffic_source=rss"
           },
           {
-            "category": "Muncă Globală",
-            "title": "Costul uman al boom-ului vehiculelor electrice, în centrul unui proces din Congo",
-            "why": "Comunitățile locale ripostează împotriva degradării mediului legate de tranziția energetică globală.",
+            "category": "Minerale Critice",
+            "title": "Costul uman al boom-ului vehiculelor electrice, în centrul unui proces în Congo",
+            "why": "Tranziția spre energia verde se confruntă cu provocări legale și morale majore legate de exploatarea comunităților miniere locale.",
             "url": "https://www.npr.org/2026/11/24/nx-s1-6042912/drc-congo-mining-china-copper-colbalt-critical-minerals"
           },
           {
-            "category": "Securitate",
-            "title": "Marea Britanie avertizează companiile cu privire la potențiale amenințări de sabotaj rusesc",
-            "why": "Alertele de infrastructură critică reamintesc cetățenilor că tensiunile geopolitice vizează rețelele comerciale.",
+            "category": "Geopolitică și Securitate",
+            "title": "Marea Britanie avertizează companiile cu privire la o potențială amenințare de sabotaj rus",
+            "why": "Riscurile crescute de război hibrid impun întreprinderilor obișnuite să își consolideze infrastructura de securitate fizică și digitală.",
             "url": "https://www.aljazeera.com/news/2026/11/25/uk-warns-companies-of-potential-russian-sabotage-threat"
           },
           {
-            "category": "Guvernanță",
-            "title": "Kilmar Ábrego García părăsește SUA pentru Spania, încheind bătălia privind deportarea",
-            "why": "Bătăliile juridice privind imigrația continuă să stabilească precedente care afectează granițele naționale.",
-            "url": "https://www.bbc.co.uk/news/articles/c6808pyy5dl9o?at_medium=RSS&at_campaign=rss"
+            "category": "Ajutor Umanitar",
+            "title": "Știri globale pe scurt: criză de vaccinuri în Yemen, ajutoare pentru Ucraina, un alt lucrător UNRWA ucis",
+            "why": "Conflictele globale continue și crizele sanitare sistemice continuă să disloce sute de mii de oameni, necesitând ajutor internațional urgent.",
+            "url": "https://news.un.org/feed/view/en/story/2026/11/1168871"
           }
         ],
         "aiWorld": [
           {
-            "tag": "AI Enterprise",
-            "title": "Miza crescută pentru rețelele corporatiste prin modernizarea cu inteligență artificială",
-            "takeaway": "Fluxurile de lucru autonome pun presiuni fără precedent pe infrastructura IT corporatistă.",
+            "tag": "Infrastructură",
+            "title": "Mize mai mari pentru rețelele enterprise odată cu modernizarea AI",
+            "takeaway": "Implementarea agenților AI exercită o presiune fără precedent asupra arhitecturii rețelelor corporative, impunând o modernizare rapidă a infrastructurii.",
             "url": "https://www.technologyreview.com/2026/11/24/1148091/raising-the-stakes-for-enterprise-networks-with-ai-modernization/"
           },
           {
-            "tag": "Integritate Media",
+            "tag": "Industrie și Etică",
+            "title": "Jensen Huang le-ar fi spus angajaților Nvidia că este „neadevărat” că Trump l-a reangajat",
+            "takeaway": "Liderii corporativi resping activ relatările care leagă numirile executive de patronajul politic partizan.",
+            "url": "https://www.theverge.com/tech/1041571/jensen-huang-all-hands-nvidia-apology"
+          },
+          {
+            "tag": "Integritatea Conținutului",
             "title": "Tidal va începe să interzică muzica generată de AI luna viitoare",
-            "takeaway": "Platformele de streaming iau măsuri ferme împotriva spamului audio automatizat pentru a proteja artiștii umani.",
+            "takeaway": "Platformele de streaming trasează o linie fermă împotriva zgomotului sintetic, pregătindu-se să elimine milioane de piese generate de AI.",
             "url": "https://www.theverge.com/entertainment/1041362/tidal-ai-music-ban"
           },
           {
-            "tag": "Media Sintetică",
-            "title": "Deepfake-urile cu Jensen Huang sunt noul conținut artificial viral",
-            "takeaway": "Proliferarea rapidă a deepfake-urilor executive demonstrează nevoia urgentă de instrumente de detecție robuste.",
-            "url": "https://www.theverge.com/tech/1041222/jensen-huang-nvidia-scandal-deepfakes"
-          },
-          {
-            "tag": "Unelte Creative",
-            "title": "New York Times avertizează fotogrāfii să nu actualizeze Photoshop din cauza funcțiilor AI",
-            "takeaway": "Instituțiile jurnalistice majore restricționează actualizările software pentru a preveni alterările generative opace.",
+            "tag": "Instrumente Creative",
+            "title": "The New York Times avertizează fotografele să nu actualizeze Photoshop din cauza funcțiilor AI",
+            "takeaway": "Organizațiile mass-media stabilesc protocoale operaționale stricte pentru a contracara funcțiile de editare generativă opace din software-ul standard.",
             "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features"
           },
           {
-            "tag": "Cercetare",
-            "title": "MOZAIC: Un reper audiovizual pentru detectarea conținutului fals",
-            "takeaway": "Noile teste de evaluare urmăresc să determine dacă algoritmii de detectare se bazează pe indicii solide.",
-            "url": "https://arxiv.org/abs/2611.31301"
+            "tag": "Guvernanță",
+            "title": "Structură de guvernanță ireductibilă pentru sistemele de agenți autonomi",
+            "takeaway": "Noua cercetare în informatică subliniază nevoia urgentă de guvernanță fundamentată matematic și cadre de alocare echitabilă în rețelele multi-agent.",
+            "url": "https://arxiv.org/abs/2611.31284"
           }
         ]
       },
-      "artworkSvg": "<svg viewBox=\"0 0 800 450\" class=\"w-full h-full object-cover\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"800\" height=\"450\" fill=\"#141821\"/>\n  <line x1=\"100\" y1=\"0\" x2=\"100\" y2=\"450\" stroke=\"#1f2937\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/>\n  <line x1=\"400\" y1=\"0\" x2=\"400\" y2=\"450\" stroke=\"#1f2937\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/>\n  <line x1=\"700\" y1=\"0\" x2=\"700\" y2=\"450\" stroke=\"#1f2937\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/>\n  <circle cx=\"400\" cy=\"225\" r=\"120\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\" opacity=\"0.4\"/>\n  <circle cx=\"400\" cy=\"225\" r=\"80\" fill=\"none\" stroke=\"#dc2626\" stroke-width=\"1.5\" opacity=\"0.6\"/>\n  <path d=\"M280 225 L520 225\" stroke=\"#fbbf24\" stroke-width=\"2\" stroke-dasharray=\"6 6\"/>\n  <path d=\"M400 105 L400 345\" stroke=\"#dc2626\" stroke-width=\"2\"/>\n  <rect x=\"370\" y=\"195\" width=\"60\" height=\"60\" fill=\"#141821\" stroke=\"#fbbf24\" stroke-width=\"3\" transform=\"rotate(45 400 225)\"/>\n  <circle cx=\"400\" cy=\"225\" r=\"12\" fill=\"#dc2626\"/>\n  <text x=\"400\" y=\"410\" font-family=\"monospace\" font-size=\"12\" fill=\"#fbbf24\" text-anchor=\"middle\" letter-spacing=\"2\">AI TIMES — PLATE 03</text>\n</svg>"
+      "artworkSvg": "<svg viewBox=\"0 0 800 450\" class=\"w-full h-full object-cover\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"800\" height=\"450\" fill=\"#141821\"/>\n  <line x1=\"100\" y1=\"350\" x2=\"700\" y2=\"350\" stroke=\"#dc2626\" stroke-width=\"4\" stroke-linecap=\"round\" opacity=\"0.8\"/>\n  <path d=\"M 150 350 L 300 180 L 450 260 L 650 120\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  <circle cx=\"300\" cy=\"180\" r=\"6\" fill=\"#fbbf24\"/>\n  <circle cx=\"450\" cy=\"260\" r=\"6\" fill=\"#fbbf24\"/>\n  <circle cx=\"650\" cy=\"120\" r=\"8\" fill=\"#dc2626\"/>\n  <text x=\"70\" y=\"80\" fill=\"#ffffff\" font-family=\"monospace\" font-size=\"14\" letter-spacing=\"2\" opacity=\"0.5\">PLATE 03 // AUTONOMOUS SYNTHESIS</text>\n</svg>"
     }
   }
 }
