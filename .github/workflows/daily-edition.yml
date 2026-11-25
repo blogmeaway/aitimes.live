@@ -1,4 +1,22 @@
-- name: Setup Node.js
+name: Publish Daily AI TIMES Edition
+
+on:
+schedule:
+- cron: "5 0 * * *"
+- cron: "37 4 * * *"
+workflow_dispatch:
+
+permissions:
+contents: write
+
+jobs:
+publish:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout repository
+uses: actions/checkout@v4
+
+  - name: Setup Node.js
     uses: actions/setup-node@v4
     with:
       node-version: "20"
