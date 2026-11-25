@@ -332,6 +332,13 @@ async function main() {
   const now = new Date();
   const dateInfo = formatDateStrings(now);
 
+  // Skip automatic scheduled backup run if today's edition is already published
+  const isManualDispatch = process.env.GITHUB_EVENT_NAME === "workflow_dispatch";
+  if (!isManualDispatch && store.editions && store.editions[dateInfo.iso]) {
+    console.log(`Edition for ${dateInfo.iso} is already published. Skipping duplicate scheduled run.`);
+    return;
+  }
+
   const prevLatest = store.editions[store.latestDate];
   const nextIssueNumber =
     store.latestDate === dateInfo.iso && prevLatest?.issueNumber
