@@ -1,5 +1,5 @@
 {
-  "latestDate": "2026-11-25",
+  "latestDate": "2026-11-26",
   "editions": {
     "2026-11-21": {
       "issueNumber": 1,
@@ -469,6 +469,164 @@
         ]
       },
       "artworkSvg": "<svg viewBox=\"0 0 800 450\" class=\"w-full h-full object-cover\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"800\" height=\"450\" fill=\"#141821\"/>\n  <line x1=\"100\" y1=\"350\" x2=\"700\" y2=\"350\" stroke=\"#dc2626\" stroke-width=\"4\" stroke-linecap=\"round\" opacity=\"0.8\"/>\n  <path d=\"M 150 350 L 300 180 L 450 260 L 650 120\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  <circle cx=\"300\" cy=\"180\" r=\"6\" fill=\"#fbbf24\"/>\n  <circle cx=\"450\" cy=\"260\" r=\"6\" fill=\"#fbbf24\"/>\n  <circle cx=\"650\" cy=\"120\" r=\"8\" fill=\"#dc2626\"/>\n  <text x=\"70\" y=\"80\" fill=\"#ffffff\" font-family=\"monospace\" font-size=\"14\" letter-spacing=\"2\" opacity=\"0.5\">PLATE 03 // AUTONOMOUS SYNTHESIS</text>\n</svg>"
+    },
+    "2026-11-26": {
+      "issueNumber": 4,
+      "en": {
+        "issue": "Issue No. 04",
+        "date": "Thursday, November 26, 2026",
+        "headline": "The Compute Constellation and the Geopolitical Earth",
+        "subhead": "As space-based data centers and orbital AI networks win regulatory clearance, the physical weight of intelligence shifts completely beyond our atmosphere.",
+        "artCaption": "Editorial Plate 04: Orbital arrays catching solar fire above an increasingly fragmented geopolitical landscape of terrestrial trade walls and soaring tech anxiety.",
+        "paragraphs": [
+          "Humanity's technological ambition has officially breached the bounds of terrestrial logistics. While international markets reel from regulatory friction and geopolitical friction over trade tariffs, the infrastructure of artificial intelligence is quietly taking flight, highlighted by the regulatory green light for millions of orbital data center satellites.",
+          "This pivot toward celestial infrastructure mirrors our deep anxieties down below. On Earth, we grapple with tightening regulatory scrutiny, sudden volatility in tech markets driven by AI evaluation reports, and escalating conflicts across regional corridors. Yet, the race for autonomous scale refuses to be boxed in by planetary resource constraints, turning the vacuum of space into the next compute frontier.",
+          "The message for everyday citizens is stark: the engines of our digital reality are ascending into orbit, separating the physical footprint of machine intelligence from local governance. As these cosmic networks materialize, the vital challenge will be keeping accountability tethered to human democratic values while the machinery of thought scales across the stars."
+        ],
+        "sources": "BBC World, Al Jazeera, NPR World, UN News, MIT Tech Review AI, The Verge AI, ArXiv CS.AI",
+        "people": [
+          {
+            "category": "Global Trade",
+            "title": "US announces new tariffs on host of countries including China",
+            "why": "New trade levies from Washington directly target major global partners, signaling a turbulent era for international commerce and consumer goods pricing.",
+            "url": "https://www.bbc.co.uk/news/articles/c893r9ke5p97o?at_medium=RSS&at_campaign=rss"
+          },
+          {
+            "category": "Markets & Tech",
+            "title": "US stocks fall further as fears over AI intensify",
+            "why": "Wall Street indices stumbled as investors increasingly fret over the capital expenditure costs and financial timelines of artificial intelligence deployments.",
+            "url": "https://www.bbc.co.uk/news/articles/cq0md8g14zryo?at_medium=RSS&at_campaign=rss"
+          },
+          {
+            "category": "Middle East",
+            "title": "Iran war live: Explosion rocks Sanaa; missiles intercepted over Riyadh",
+            "why": "Escalating regional hostilities continue to disrupt security across the Middle East, threatening vital energy corridors and civilian safety.",
+            "url": "https://www.aljazeera.com/news/liveblog/2026/11/26/iran-war-live-explosion-rocks-sanaa-missiles-intercepted-over-riyadh?traffic_source=rss"
+          },
+          {
+            "category": "Environment",
+            "title": "King tides and big waves batter coastal California",
+            "why": "Extreme tidal surges driven by severe weather patterns demonstrate the relentless domestic impact of changing coastal dynamics.",
+            "url": "https://www.aljazeera.com/video/newsfeed/2026/11/25/king-tides-and-big-waves-batter-coastal-california?traffic_source=rss"
+          },
+          {
+            "category": "Governance",
+            "title": "China investigates Politburo member and Shanghai party chief Chen Jining",
+            "why": "Beijing's expansive anti-corruption campaign reaches into the highest echelons of political power, showing no sign of slowing down.",
+            "url": "https://www.npr.org/2026/11/25/nx-s1-6053801/china-investigation-politburo-shanghai-party"
+          }
+        ],
+        "aiWorld": [
+          {
+            "tag": "Space Infrastructure",
+            "title": "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
+            "takeaway": "Orbital compute clusters are moving from science fiction to regulatory reality, fundamentally altering the topology of global cloud architecture.",
+            "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers"
+          },
+          {
+            "tag": "Capabilities",
+            "title": "The most misunderstood graph in AI just got a major update",
+            "takeaway": "Independent evaluations reveal that while narrow capabilities continue exponential climbs, models still stumble on genuine reasoning tasks.",
+            "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/"
+          },
+          {
+            "tag": "Hardware & Gadgets",
+            "title": "Nothing offers a full look at its AI earbuds and charging case",
+            "takeaway": "Ambient hardware is rapidly evolving into continuous audio recorders and automatic summarizers, raising acute privacy considerations.",
+            "url": "https://www.theverge.com/gadgets/1042162/nothing-ear-note-ai-earbuds-reveal"
+          },
+          {
+            "tag": "Agent Economics",
+            "title": "Amazon is reportedly in talks to end Muse AI shopping block",
+            "takeaway": "Discussions between retail and AI giants hint at a future where autonomous software agents replace humans as the primary retail consumers.",
+            "url": "https://www.verge.com/tech/1042071/meta-amazon-muse-ai-shopping-discussions"
+          },
+          {
+            "tag": "Deepfakes",
+            "title": "MOZAIC: An Audio-Video Deepfake Benchmark for Telling What Is Fake",
+            "takeaway": "New evaluation benchmarks are desperately needed as multi-modal synthetic media pushes past standard surface-level detection techniques.",
+            "url": "https://arxiv.org/abs/2611.31301"
+          }
+        ]
+      },
+      "ro": {
+        "issue": "Ediția Nr. 04",
+        "date": "Joi, 26 noiembrie 2026",
+        "headline": "Constelația de Calcul și Pământul Geopolitic",
+        "subhead": "Pe măsură ce centrele de date spațiale și rețelele AI orbitale primesc aprobare de reglementare, greutatea fizică a inteligenței se mută complet în afara atmosferei.",
+        "artCaption": "Planșa Editorială 04: Matrice orbitale captând lumina solară deasupra unui peisaj geopolitic din ce în ce mai fragmentat de bariere comerciale și anxietate tehnologică.",
+        "paragraphs": [
+          "Ambiția tehnologică a umanității a depășit oficial limitele logisticii terestre. În timp ce piețele internaționale se confruntă cu fricțiuni de reglementare și tensiuni comerciale, infrastructura inteligenței artificiale prinde aripi, fiind marcată de unda verde primită de milioane de sateliți-centru de date pe orbită.",
+          "Această orientare către infrastructura celestă oglindește anxietățile noastre profunde de la sol. Pe Pământ, gestionăm un control de reglementare tot mai strict, volatilitate bruscă pe piețele tehnologice și conflicte regionale în creștere. Totuși, cursa pentru scalare autonomă refuză să fie constrânsă de limitele planetare, transformând vidul spațial în noua frontieră a calculului.",
+          "Mesajul pentru cetățenii de rând este clar: motoarele realității noastre digitale urcă pe orbită, separând amprenta fizică a inteligenței mașinilor de guvernanța locală. Pe măsură ce aceste rețele cosmice prind contur, provocarea vitală va fi menținerea responsabilității conectate la valorile democratice umane, în timp ce mașinăria gândirii se extinde printre stele."
+        ],
+        "sources": "BBC World, Al Jazeera, NPR World, UN News, MIT Tech Review AI, The Verge AI, ArXiv CS.AI",
+        "people": [
+          {
+            "category": "Comerț Global",
+            "title": "SUA anunță noi tarife pentru o serie de țări, inclusiv China",
+            "why": "Noile taxe vamale impuse de Washington vizează direct parteneri comerciali majori, semnalând o eră turbulentă pentru comerțul internațional și prețurile bunurilor.",
+            "url": "https://www.bbc.co.uk/news/articles/c893r9ke5p97o?at_medium=RSS&at_campaign=rss"
+          },
+          {
+            "category": "Piețe și Tech",
+            "title": "Acțiunile din SUA scad din nou pe fondul intensificării temerilor legate de AI",
+            "why": "Indicii de pe Wall Street au scăzut pe măsură ce investitorii își exprimă îngrijorarea cu privire la costurile de capital și termenele financiare ale implementărilor AI.",
+            "url": "https://www.bbc.co.uk/news/articles/cq0md8g14zryo?at_medium=RSS&at_campaign=rss"
+          },
+          {
+            "category": "Orientul Mijlociu",
+            "title": "Războiul din Iran în direct: Explozie în Sanaa; rachete interceptate deasupra Riadului",
+            "why": "Escaladarea ostilităților regionale continuă să perturbe securitatea în Orientul Mijlociu, amenințând coridoarele energetice vitale și siguranța civilă.",
+            "url": "https://www.aljazeera.com/news/liveblog/2026/11/26/iran-war-live-explosion-rocks-sanaa-missiles-intercepted-over-riyadh?traffic_source=rss"
+          },
+          {
+            "category": "Mediu",
+            "title": "Valuri masive și maree înalte lovesc coasta Californiei",
+            "why": "Creșterile extreme ale nivelului mării provocate de vremea severă demonstrează impactul intern necruțător al schimbărilor climatice de coastă.",
+            "url": "https://www.aljazeera.com/video/newsfeed/2026/11/25/king-tides-and-big-waves-batter-coastal-california?traffic_source=rss"
+          },
+          {
+            "category": "Guvernanță",
+            "title": "China investighează membrul Biroului Politic și șeful partidului din Shanghai, Chen Jining",
+            "why": "Campania anticorupție a Beijingului ajunge la cele mai înalte eșaloane ale puterii politice, fără a da semne de încetinire.",
+            "url": "https://www.npr.org/2026/11/25/nx-s1-6053801/china-investigation-politburo-shanghai-party"
+          }
+        ],
+        "aiWorld": [
+          {
+            "tag": "Infrastructură Spațială",
+            "title": "FCC aprobă planul SpaceX de a plasa până la 1 milion de sateliți-centru de date în spațiu",
+            "takeaway": "Clusterele de calcul orbitale trec din domeniul științifico-fantasticului în realitatea de reglementare, modificând topologia cloud-ului global.",
+            "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers"
+          },
+          {
+            "tag": "Capabilități",
+            "title": "Cel mai greșit înțeles grafic din AI tocmai a primit o actualizare majoră",
+            "takeaway": "Evaluările independente arată că, în timp ce capabilitățile înguste cresc exponențial, modelele încă întâmpină dificultăți în sarcini complexe de raționament.",
+            "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/"
+          },
+          {
+            "tag": "Hardware și Gadgeturi",
+            "title": "Nothing oferă o privire detaliată asupra căștilor sale AI și a cutiei de încărcare",
+            "takeaway": "Hardware-ul ambient devine rapid un instrument de înregistrare audio continuă, ridicând întrebări acute legate de confidențialitate.",
+            "url": "https://www.theverge.com/gadgets/1042162/nothing-ear-note-ai-earbuds-reveal"
+          },
+          {
+            "tag": "Economia Agenților",
+            "title": "Amazon ar fi în discuții pentru a încheia blocarea cumpărăturilor AI Muse",
+            "takeaway": "Discuțiile sugerează un viitor în care agenții software autonomi înlocuiesc oamenii ca principali consumatori online.",
+            "url": "https://www.verge.com/tech/1042071/meta-amazon-muse-ai-shopping-discussions"
+          },
+          {
+            "tag": "Deepfake-uri",
+            "title": "MOZAIC: Un reper audiovizual pentru detectarea conținutului fals",
+            "takeaway": "Noile metode de evaluare sunt esențiale pe măsură ce conținutul sintetic multimodal depășește tehnicile clasice de detecție la suprafață.",
+            "url": "https://arxiv.org/abs/2611.31301"
+          }
+        ]
+      },
+      "artworkSvg": "<svg viewBox=\"0 0 800 450\" class=\"w-full h-full object-cover\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"800\" height=\"450\" fill=\"#141821\"/><circle cx=\"400\" cy=\"225\" r=\"140\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"1.5\" opacity=\"0.4\"/><circle cx=\"400\" cy=\"225\" r=\"180\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"0.75\" opacity=\"0.2\"/><path d=\"M250 225 L550 225\" stroke=\"#dc2626\" stroke-width=\"2\" opacity=\"0.8\"/><circle cx=\"400\" cy=\"225\" r=\"80\" fill=\"#fbbf24\" opacity=\"0.15\"/><circle cx=\"280\" cy=\"160\" r=\"4\" fill=\"#fbbf24\"/><circle cx=\"520\" cy=\"290\" r=\"6\" fill=\"#dc2626\"/><circle cx=\"490\" cy=\"150\" r=\"3\" fill=\"#fbbf24\"/><circle cx=\"310\" cy=\"300\" r=\"5\" fill=\"#fbbf24\"/><line x1=\"280\" y1=\"160\" x2=\"400\" y2=\"225\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.5\"/><line x1=\"520\" y1=\"290\" x2=\"400\" y2=\"225\" stroke=\"#dc2626\" stroke-width=\"0.5\" opacity=\"0.5\"/></svg>"
     }
   }
 }
