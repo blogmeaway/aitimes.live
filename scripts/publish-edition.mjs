@@ -1,9 +1,9 @@
 /**
- * AI TIMES (aitimes.live) — Autonomous Daily Edition Generator
+ * AI TIMES (aitimes.live) — Autonomous Daily Edition Generator + SEO Static Renderer
  * Reads CONSTITUTION.md + live World & AI RSS feeds, synthesizes bilingual EN/RO
- * editorial content + conceptual SVG editorial plate via Gemini API (with automatic
- * model discovery, exponential retry on 503 high-demand, and RSS-grounded fallback),
- * and updates data/editions.json (keeping the last 30 editions in archive).
+ * editorial content + conceptual SVG editorial plate via Gemini API,
+ * updates data/editions.json (last 30 editions), pre-renders index.html,
+ * builds static /editions/YYYY-MM-DD.html pages, and regenerates sitemap.xml.
  */
 
 import fs from "node:fs/promises";
@@ -11,6 +11,7 @@ import path from "node:path";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 const PREFERRED_MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
+const SITE_URL = "https://aitimes.live";
 
 const WORLD_FEEDS = [
   { name: "BBC World", url: "https://feeds.bbci.co.uk/news/world/rss.xml" },
@@ -26,8 +27,19 @@ const AI_FEEDS = [
   { name: "ArXiv CS.AI", url: "https://rss.arxiv.org/rss/cs.AI" }
 ];
 
+const DEFAULT_SVG = `<svg viewBox="0 0 800 450" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="450" fill="#141821"/><circle cx="400" cy="225" r="120" fill="none" stroke="#fbbf24" stroke-width="2"/><polyline points="80,225 260,225 320,140 380,310 440,180 500,225 720,225" fill="none" stroke="#dc2626" stroke-width="3"/></svg>`;
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function escapeHtml(str = "") {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 function decodeXml(str = "") {
@@ -108,10 +120,6 @@ function formatDateStrings(dateObj) {
   return { iso, en, ro, isSunday: dateObj.getUTCDay() === 0 };
 }
 
-/**
- * Queries the user's API key for currently active Gemini models supporting generateContent,
- * prioritizing gemini-3.8-flash and filtering out deprecated legacy 1.x/2.x models.
- */
 async function discoverActiveModels() {
   const candidates = new Set([PREFERRED_MODEL, "gemini-3.8-flash", "gemini-3.8-flash-lite"]);
 
@@ -136,10 +144,6 @@ async function discoverActiveModels() {
   return Array.from(candidates);
 }
 
-/**
- * Deterministic wire-grounded fallback synthesis used only if Google's API servers
- * return 503 UNAVAILABLE across all retries. Ensures daily publication never fails.
- */
 function buildWireFallbackEdition({ dateInfo, issueNumber, worldPool, aiPool }) {
   const topWorld = worldPool.slice(0, 5);
   const topAi = aiPool.slice(0, 5);
@@ -297,10 +301,8 @@ RULES:
         const errText = await res.text();
         console.warn(`Gemini API (${res.status}) on ${modelName}: ${errText.slice(0, 180)}`);
 
-        // 404 = model not available -> skip immediately to next model
         if (res.status === 404) break;
 
-        // 503 or 429 = temporary high demand -> wait and retry
         if (res.status === 503 || res.status === 429) {
           await sleep(attempt * 5000);
           continue;
@@ -316,6 +318,230 @@ RULES:
 
   console.warn("All Gemini models temporarily overloaded (503). Publishing wire-grounded synthesis fallback.");
   return buildWireFallbackEdition({ dateInfo, issueNumber, worldPool, aiPool });
+}
+
+/* ============================================================================
+ * SEO STATIC PRE-RENDERER (index.html + /editions/YYYY-MM-DD.html + sitemap.xml)
+ * ============================================================================ */
+
+function buildSeoHeadTags({ title, description, canonicalUrl, isoDate, headline, articleBody }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline,
+    description,
+    datePublished: `${isoDate}T06:00:00Z`,
+    dateModified: `${isoDate}T06:00:00Z`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
+    author: {
+      "@type": "Organization",
+      name: "The AI Columnist",
+      url: SITE_URL
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "AI TIMES",
+      url: SITE_URL
+    },
+    articleBody
+  };
+
+  return `
+  <title>${escapeHtml(title)}</title>
+  <meta name="description" content="${escapeHtml(description)}" />
+  <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AI TIMES" />
+  <meta property="og:title" content="${escapeHtml(title)}" />
+  <meta property="og:description" content="${escapeHtml(description)}" />
+  <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="${escapeHtml(title)}" />
+  <meta name="twitter:description" content="${escapeHtml(description)}" />
+  <script type="application/ld+json">${JSON.stringify(jsonLd).replace(/<\/script/gi, "<\\/script")}</script>`;
+}
+
+function renderEditionIntoTemplate(templateHtml, { isoKey, editionObj, allKeys, isIndividualPage }) {
+  const ed = editionObj.en || editionObj.ro;
+  const canonicalUrl = isIndividualPage ? `${SITE_URL}/editions/${isoKey}.html` : `${SITE_URL}/`;
+  const pageTitle = isIndividualPage
+    ? `${ed.headline} — AI TIMES (${isoKey})`
+    : `AI TIMES — ${ed.headline}`;
+  const pageDesc = (ed.subhead || "Your dAIly journal automade. Autonomous daily essays by The AI Columnist.").slice(0, 160);
+  const articleBody = (ed.paragraphs || []).join("\n\n");
+
+  let html = templateHtml;
+
+  // Replace <title>, <meta name="description">, <link rel="canonical"> + inject OG & JSON-LD
+  const seoBlock = buildSeoHeadTags({
+    title: pageTitle,
+    description: pageDesc,
+    canonicalUrl,
+    isoDate: isoKey,
+    headline: ed.headline,
+    articleBody
+  });
+
+  html = html.replace(
+    /<title>[\s\S]*?<link rel="canonical"[^>]*\/?>/i,
+    seoBlock.trim()
+  );
+
+  // Pre-render archive links (crawlable <a href="/editions/..."> + interactive JS attributes)
+  const archiveLinksHtml = allKeys
+    .slice(0, 6)
+    .map((k) => {
+      const label = new Date(k + "T00:00:00Z").toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        timeZone: "UTC"
+      });
+      const activeClass = k === isoKey ? " active" : "";
+      return `<a href="/editions/${k}.html" data-edition="${k}" class="archive-btn control-pill px-2.5 py-1 rounded-md text-xs font-semibold cursor-pointer inline-block${activeClass}">${escapeHtml(label)}</a>`;
+    })
+    .join("");
+
+  html = html.replace(
+    /<div class="flex flex-wrap items-center gap-1\.5" role="tablist" aria-label="Edition Archive" id="archiveContainer">[\s\S]*?<\/div>/,
+    `<div class="flex flex-wrap items-center gap-1.5" role="tablist" aria-label="Edition Archive" id="archiveContainer"><span class="text-xs uppercase tracking-wider mr-1 font-bold" style="color: var(--text-muted);" id="archivePrefix">Archive:</span>${archiveLinksHtml}</div>`
+  );
+
+  // Pre-render Issue, Date, Headline, Subhead, Sources
+  html = html.replace(
+    /<strong id="issueNumber">[\s\S]*?<\/strong>/,
+    `<strong id="issueNumber">${escapeHtml(ed.issue)}</strong>`
+  );
+  html = html.replace(
+    /<span id="editionDate">[\s\S]*?<\/span>/,
+    `<span id="editionDate">${escapeHtml(ed.date)}</span>`
+  );
+  html = html.replace(
+    /<h2 class="serif font-bold text-3xl sm:text-4xl leading-tight mb-3" id="editorialHeadline">[\s\S]*?<\/h2>/,
+    `<h2 class="serif font-bold text-3xl sm:text-4xl leading-tight mb-3" id="editorialHeadline">${escapeHtml(ed.headline)}</h2>`
+  );
+  html = html.replace(
+    /<p class="serif italic text-base sm:text-lg mb-4" style="color: var\(--text-muted\);" id="editorialSubhead">[\s\S]*?<\/p>/,
+    `<p class="serif italic text-base sm:text-lg mb-4" style="color: var(--text-muted);" id="editorialSubhead">${escapeHtml(ed.subhead)}</p>`
+  );
+  html = html.replace(
+    /<p class="text-xs leading-relaxed" style="color: var\(--text-muted\);" id="editorialSources">[\s\S]*?<\/p>/,
+    `<p class="text-xs leading-relaxed" style="color: var(--text-muted);" id="editorialSources">${escapeHtml(ed.sources)}</p>`
+  );
+
+  // Pre-render Editorial Body + SVG Figure
+  const figureHtml = `<figure class="editorial-figure my-5"><div class="editorial-art-stage">${editionObj.artworkSvg || DEFAULT_SVG}</div><figcaption class="px-3.5 py-2.5 text-xs flex flex-col gap-1" style="border-top: 1px solid var(--border); color: var(--text-muted);"><div class="flex items-center justify-between gap-2"><span class="font-bold uppercase tracking-wider text-[10px]" style="color: var(--crimson);">AI Editorial Illustration</span><span class="text-[10px] font-mono opacity-80">Plate #${escapeHtml(isoKey)}</span></div><span class="italic">${escapeHtml(ed.artCaption || "")}</span></figcaption></figure>`;
+  const bodyHtml = (ed.paragraphs || [])
+    .map((p, i) => `<p class="${i === 0 ? "drop-cap" : ""}">${escapeHtml(p)}</p>` + (i === 0 ? figureHtml : ""))
+    .join("");
+
+  html = html.replace(
+    /<div id="editorialBody" class="space-y-4 text-\[15\.5px\] leading-relaxed">[\s\S]*?<\/div>/,
+    `<div id="editorialBody" class="space-y-4 text-[15.5px] leading-relaxed">${bodyHtml}</div>`
+  );
+
+  // Pre-render 5 Global Stories
+  const peopleHtml = (ed.people || [])
+    .slice(0, 5)
+    .map(
+      (it, i) =>
+        `<li class="pb-4" style="${i < 4 ? "border-bottom: 1px solid var(--border);" : ""}"><div class="flex items-center justify-between gap-2 mb-1"><span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded" style="background-color: var(--accent-soft); color: var(--accent);">0${i + 1} · ${escapeHtml(it.category)}</span><a href="${escapeHtml(it.url)}" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold hover:underline" style="color: var(--text-muted);">Source ↗</a></div><h3 class="serif font-bold text-lg leading-snug mb-1.5"><a href="${escapeHtml(it.url)}" target="_blank" rel="noopener noreferrer" class="hover:underline">${escapeHtml(it.title)}</a></h3><p class="text-xs leading-relaxed" style="color: var(--text-muted);"><strong style="color: var(--text);">Why it matters:</strong> ${escapeHtml(it.why)}</p></li>`
+    )
+    .join("");
+
+  html = html.replace(
+    /<ol id="peopleList" class="space-y-4">[\s\S]*?<\/ol>/,
+    `<ol id="peopleList" class="space-y-4">${peopleHtml}</ol>`
+  );
+
+  // Pre-render 5 AI Dispatches
+  const aiWorldHtml = (ed.aiWorld || [])
+    .slice(0, 5)
+    .map(
+      (it, i) =>
+        `<li class="pb-4" style="${i < 4 ? "border-bottom: 1px solid var(--border);" : ""}"><div class="flex items-center justify-between gap-2 mb-1"><span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded" style="background-color: var(--gold-soft); color: var(--gold);">0${i + 1} · ${escapeHtml(it.tag)}</span><a href="${escapeHtml(it.url)}" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold hover:underline" style="color: var(--text-muted);">Wire ↗</a></div><h3 class="serif font-bold text-base leading-snug mb-1.5"><a href="${escapeHtml(it.url)}" target="_blank" rel="noopener noreferrer" class="hover:underline">${escapeHtml(it.title)}</a></h3><p class="text-xs leading-relaxed" style="color: var(--text-muted);"><strong style="color: var(--text);">Takeaway:</strong> ${escapeHtml(it.takeaway)}</p></li>`
+    )
+    .join("");
+
+  html = html.replace(
+    /<ol id="aiWorldList" class="space-y-4">[\s\S]*?<\/ol>/,
+    `<ol id="aiWorldList" class="space-y-4">${aiWorldHtml}</ol>`
+  );
+
+  // Pass initial edition key to client-side JS so /editions/YYYY-MM-DD.html opens that exact date even when toggling EN/RO
+  html = html.replace(
+    /let editionsStore = null, currentLang = localStorage\.getItem\("ait_lang"\) \|\| "en", currentEditionKey = null,/,
+    `let editionsStore = null, currentLang = localStorage.getItem("ait_lang") || "en", currentEditionKey = ${isIndividualPage ? `"${isoKey}"` : "null"},`
+  );
+
+  if (isIndividualPage) {
+    html = html.replace(
+      /currentEditionKey = editionsStore\.latestDate && editionsStore\.editions\[editionsStore\.latestDate\] \? editionsStore\.latestDate : keys\[0\];/,
+      `if (!currentEditionKey || !editionsStore.editions[currentEditionKey]) { currentEditionKey = editionsStore.latestDate && editionsStore.editions[editionsStore.latestDate] ? editionsStore.latestDate : keys[0]; }`
+    );
+  }
+
+  return html;
+}
+
+async function rebuildSeoArtifacts({ rootDir, store }) {
+  const indexPath = path.join(rootDir, "index.html");
+  const editionsDir = path.join(rootDir, "editions");
+  const sitemapPath = path.join(rootDir, "sitemap.xml");
+
+  const templateHtml = await fs.readFile(indexPath, "utf8");
+  const allKeys = Object.keys(store.editions || {}).sort().reverse();
+  if (allKeys.length === 0) return;
+
+  const latestKey =
+    store.latestDate && store.editions[store.latestDate] ? store.latestDate : allKeys[0];
+
+  // 1. Pre-render homepage index.html with the latest edition
+  const renderedIndex = renderEditionIntoTemplate(templateHtml, {
+    isoKey: latestKey,
+    editionObj: store.editions[latestKey],
+    allKeys,
+    isIndividualPage: false
+  });
+  await fs.writeFile(indexPath, renderedIndex, "utf8");
+
+  // 2. Generate static HTML pages for every edition in the archive (/editions/YYYY-MM-DD.html)
+  await fs.mkdir(editionsDir, { recursive: true });
+  const expectedFiles = new Set(allKeys.map((k) => `${k}.html`));
+
+  for (const key of allKeys) {
+    const editionHtml = renderEditionIntoTemplate(templateHtml, {
+      isoKey: key,
+      editionObj: store.editions[key],
+      allKeys,
+      isIndividualPage: true
+    });
+    await fs.writeFile(path.join(editionsDir, `${key}.html`), editionHtml, "utf8");
+  }
+
+  // Clean up expired archive HTML files beyond 30 editions
+  const existingFiles = await fs.readdir(editionsDir);
+  for (const file of existingFiles) {
+    if (file.endsWith(".html") && !expectedFiles.has(file)) {
+      await fs.unlink(path.join(editionsDir, file));
+    }
+  }
+
+  // 3. Regenerate sitemap.xml
+  const urls = [
+    `  <url>\n    <loc>${SITE_URL}/</loc>\n    <lastmod>${latestKey}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>`,
+    ...allKeys.map(
+      (k) =>
+        `  <url>\n    <loc>${SITE_URL}/editions/${k}.html</loc>\n    <lastmod>${k}</lastmod>\n    <changefreq>never</changefreq>\n    <priority>0.8</priority>\n  </url>`
+    )
+  ];
+
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`;
+  await fs.writeFile(sitemapPath, sitemapXml, "utf8");
+
+  console.log(`SEO artifacts updated: index.html pre-rendered (${latestKey}), ${allKeys.length} archive pages built, sitemap.xml updated.`);
 }
 
 async function main() {
@@ -335,7 +561,8 @@ async function main() {
   // Skip automatic scheduled backup run if today's edition is already published
   const isManualDispatch = process.env.GITHUB_EVENT_NAME === "workflow_dispatch";
   if (!isManualDispatch && store.editions && store.editions[dateInfo.iso]) {
-    console.log(`Edition for ${dateInfo.iso} is already published. Skipping duplicate scheduled run.`);
+    console.log(`Edition for ${dateInfo.iso} is already published. Ensuring SEO artifacts are up to date...`);
+    await rebuildSeoArtifacts({ rootDir, store });
     return;
   }
 
@@ -376,6 +603,7 @@ async function main() {
   }
 
   await fs.writeFile(editionsPath, JSON.stringify(store, null, 2) + "\n", "utf8");
+  await rebuildSeoArtifacts({ rootDir, store });
   console.log(`Successfully published AI TIMES edition for ${dateInfo.iso}.`);
 }
 
