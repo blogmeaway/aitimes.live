@@ -1,5 +1,5 @@
 {
-  "latestDate": "2026-11-26",
+  "latestDate": "2026-11-27",
   "editions": {
     "2026-11-21": {
       "issueNumber": 1,
@@ -627,6 +627,164 @@
         ]
       },
       "artworkSvg": "<svg viewBox=\"0 0 800 450\" class=\"w-full h-full object-cover\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"800\" height=\"450\" fill=\"#141821\"/><circle cx=\"400\" cy=\"225\" r=\"140\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"1.5\" opacity=\"0.4\"/><circle cx=\"400\" cy=\"225\" r=\"180\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"0.75\" opacity=\"0.2\"/><path d=\"M250 225 L550 225\" stroke=\"#dc2626\" stroke-width=\"2\" opacity=\"0.8\"/><circle cx=\"400\" cy=\"225\" r=\"80\" fill=\"#fbbf24\" opacity=\"0.15\"/><circle cx=\"280\" cy=\"160\" r=\"4\" fill=\"#fbbf24\"/><circle cx=\"520\" cy=\"290\" r=\"6\" fill=\"#dc2626\"/><circle cx=\"490\" cy=\"150\" r=\"3\" fill=\"#fbbf24\"/><circle cx=\"310\" cy=\"300\" r=\"5\" fill=\"#fbbf24\"/><line x1=\"280\" y1=\"160\" x2=\"400\" y2=\"225\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.5\"/><line x1=\"520\" y1=\"290\" x2=\"400\" y2=\"225\" stroke=\"#dc2626\" stroke-width=\"0.5\" opacity=\"0.5\"/></svg>"
+    },
+    "2026-11-27": {
+      "issueNumber": 5,
+      "en": {
+        "issue": "Issue No. 05",
+        "date": "Friday, November 27, 2026",
+        "headline": "The Fractured Horizons of Automated Governance and Global Strife",
+        "subhead": "As space-based data centers and orbital chip deployments accelerate, earthly systems struggle under the weight of geopolitical fissures and administrative overload.",
+        "artCaption": "Editorial Plate 05: A minimalist geometric representation of orbital data nodes juxtaposed against a fragmented terrestrial grid.",
+        "paragraphs": [
+          "The intersection of planetary infrastructure and artificial intelligence has entered a phase of aggressive physical expansion, evidenced this week by regulatory approvals for orbital data centers and unprecedented automation strains on public record systems. Yet, as our technical reach extends beyond the stratosphere, human systems on the ground remain deeply fractured by enduring conflicts, economic realignments, and shifting diplomatic alliances.",
+          "In the geopolitical arena, international friction continues to mount from Eastern Europe to the Middle East, while domestic institutions grapple with the structural weight of technological transition. The juxtaposition of SpaceX securing clearance for a million data-center satellites and municipal clerks in small towns drowning under the administrative velocity of automated records highlights a stark systemic paradox: our tools are scaling exponentially faster than our institutional capacities to govern them wisely.",
+          "Navigating this era requires looking past the immediate noise of regulatory turf wars and holiday weather disruptions to examine the structural friction points of our automated future. True technological progress cannot be measured solely by orbital bandwidth or inference speed, but by whether our expanding digital architecture ultimately serves to stabilize or fracture the human communities inhabiting the surface below."
+        ],
+        "sources": "BBC World, Al Jazeera, NPR World, UN News, MIT Tech Review AI, The Verge AI, ArXiv CS.AI",
+        "people": [
+          {
+            "category": "Geopolitics",
+            "title": "US too focused on Middle East and not pushing Russia hard enough, Zelensky tells BBC",
+            "why": "Shifts in international pressure directly impact global security and economic stability felt by everyday citizens.",
+            "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss"
+          },
+          {
+            "category": "Economy",
+            "title": "Argentina bars Central Bank from printing money to fund government spending",
+            "why": "Radical monetary policy shifts alter inflation rates and purchasing power for millions across South America.",
+            "url": "https://www.aljazeera.com/news/2026/11/27/argentina-bars-central-bank-from-printing-money-to-fund-government-spending?traffic_source=rss"
+          },
+          {
+            "category": "Health Crisis",
+            "title": "Congo Ebola outbreak reaches 12,000 cases as some responders evacuate",
+            "why": "Escalating health emergencies combined with conflict threaten regional stability and global health preparedness.",
+            "url": "https://www.npr.org/2026/11/26/g-s1-155957/congo-ebola-responders"
+          },
+          {
+            "category": "Weather & Travel",
+            "title": "Major Thanksgiving storm brings flooding, flight delays across US",
+            "why": "Severe weather disruptions impact millions of travelers and highlight the vulnerability of modern transit infrastructure.",
+            "url": "https://www.bbc.co.uk/news/articles/ckm2mz3prq77o?at_medium=RSS&at_campaign=rss"
+          },
+          {
+            "category": "Global Security",
+            "title": "North Korea's Kim vows to build more nuclear weapons after ignoring Trump's overture",
+            "why": "Renewed proliferation tensions raise the baseline risk profile for international trade and diplomatic safety.",
+            "url": "https://www.npr.org/2026/11/26/g-s1-155955/congo-ebola-responders"
+          }
+        ],
+        "aiWorld": [
+          {
+            "tag": "Space Infrastructure",
+            "title": "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
+            "why": "Orbital compute constellations mark a radical leap toward extraterrestrial AI infrastructure, bypassing terrestrial power limits.",
+            "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers"
+          },
+          {
+            "tag": "Data Governance",
+            "title": "42 state AGs are trying to stop Character.AI from selling users’ chats",
+            "why": "State-level coalitions are aggressively pushing back against the monetization of intimate personal conversational data during corporate bankruptcies.",
+            "url": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats"
+          },
+          {
+            "tag": "Public Administration",
+            "title": "AI is straining America’s open records systems",
+            "why": "Local municipalities are finding their traditional transparency laws overwhelmed by the sheer volume of AI-generated public requests.",
+            "url": "https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/"
+          },
+          {
+            "tag": "Sensory AI",
+            "title": "This smell startup says its AI nose is as good as a human’s",
+            "why": "Synthetic olfaction breakthroughs are bridging the gap between digital processing and complex chemical perception.",
+            "url": "https://www.technologyreview.com/2026/11/18/1148816/smell-startup-osmo-ai-nose-good-as-humans/"
+          },
+          {
+            "tag": "Consumer Tech",
+            "title": "Nothing offers a full look at its AI earbuds and charging case",
+            "why": "Ubiquitous hardware integration continues to blur the line between passive listening and active automated transcription.",
+            "url": "https://www.theverge.com/gadgets/1042162/nothing-ear-note-ai-earbuds-reveal"
+          }
+        ]
+      },
+      "ro": {
+        "issue": "Ediția Nr. 05",
+        "date": "Vineri, 27 noiembrie 2026",
+        "headline": "Orizonturile fracturate ale guvernanței automatizate și ale conflictelor globale",
+        "subhead": "Pe măsură ce centrele de date spațiale și implementările de cipuri orbitale se accelerează, sistemele terestre se chinuie sub greutatea fisurilor geopolitice și a suprasolicitării administrative.",
+        "artCaption": "Planșa Editorială 05: O reprezentare geometrică minimalistă a nodurilor de date orbitale juxtapuse pe o grilă terestră fragmentată.",
+        "paragraphs": [
+          "Intersecția dintre infrastructura planetară și inteligența artificială a intrat într-o fază de expansiune fizică agresivă, evidențiată în această săptămână de aprobările de reglementare pentru centrele de date orbitale și presiunile administrative fără precedent asupra sistemelor de arhive publice. Totuși, pe măsură ce raza noastră de acțiune tehnică se extinde dincolo de stratosferă, sistemele umane de la sol rămân profund fracturate de conflicte persistente, realințări economice și alianțe diplomatice în schimbare.",
+          "În arena geopolitică, fricțiunea internațională continuă să crească din Europa de Est până în Orientul Mijlociu, în timp ce instituțiile interne se luptă cu greutatea structurală a tranziției tehnologice. Juxtapunerea dintre obținerea de către SpaceX a autorizației pentru un milion de sateliți cu centre de date și grefierii municipali din orașele mici înecați sub viteza administrativă a înregistrărilor automatizate evidențiază un paradox sistemic frapant: instrumentele noastre se extind exponențial mai repede decât capacitățile noastre instituționale de a le guverna cu înțelepciune.",
+          "Navigarea în această eră necesită privirea dincolo de zgomotul imediat al războaielor de reglementare și al perturbațiilor meteorologice de sărbători, pentru a examina punctele de fricțiune structurală ale viitorului nostru automatizat. Progresul tehnologic adevărat nu poate fi măsurat doar prin lățimea de bandă orbitală sau viteza de inferență, ci prin faptul că arhitectura noastră digitală în expansionism servește în cele din urmă la stabilizarea sau fracturarea comunităților umane de la suprafață."
+        ],
+        "sources": "BBC World, Al Jazeera, NPR World, UN News, MIT Tech Review AI, The Verge AI, ArXiv CS.AI",
+        "people": [
+          {
+            "category": "Geopolitică",
+            "title": "US too focused on Middle East and not pushing Russia hard enough, Zelensky tells BBC",
+            "why": "Schimbările în presiunea internațională afectează direct securitatea globală și stabilitatea economică resimțită de cetățenii de rând.",
+            "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss"
+          },
+          {
+            "category": "Economie",
+            "title": "Argentina bars Central Bank from printing money to fund government spending",
+            "why": "Schimbările radicale de politică monetară modifică ratele inflației și puterea de cumpărare pentru milioane de oameni din America de Sud.",
+            "url": "https://www.aljazeera.com/news/2026/11/27/argentina-bars-central-bank-from-printing-money-to-fund-government-spending?traffic_source=rss"
+          },
+          {
+            "category": "Criză Sanitară",
+            "title": "Congo Ebola outbreak reaches 12,000 cases as some responders evacuate",
+            "why": "Urgențele sanitare în creștere combinate cu conflictul amenință stabilitatea regională și pregătirea globală în domeniul sănătății.",
+            "url": "https://www.npr.org/2026/11/26/g-s1-155957/congo-ebola-responders"
+          },
+          {
+            "category": "Vreme și Călătorii",
+            "title": "Major Thanksgiving storm brings flooding, flight delays across US",
+            "why": "Perturbațiile meteorologice severe afectează milioane de călători și scot în evidență vulnerabilitatea infrastructurii moderne de transport.",
+            "url": "https://www.bbc.co.uk/news/articles/ckm2mz3prq77o?at_medium=RSS&at_campaign=rss"
+          },
+          {
+            "category": "Securitate Globală",
+            "title": "North Korea's Kim vows to build more nuclear weapons after ignoring Trump's overture",
+            "why": "Tensiunile reînnoite de proliferare cresc profilul de risc de bază pentru comerțul internațional și siguranța diplomatică.",
+            "url": "https://www.npr.org/2026/11/26/g-s1-155955/congo-ebola-responders"
+          }
+        ],
+        "aiWorld": [
+          {
+            "tag": "Infrastructură Spațială",
+            "title": "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
+            "why": "Constelațiile de calcul orbital marchează un salt radical către infrastructura AI extraterestră, ocolind limitele energetice terestre.",
+            "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers"
+          },
+          {
+            "tag": "Guvernanța Datelor",
+            "title": "42 state AGs are trying to stop Character.AI from selling users’ chats",
+            "why": "Coalițiile la nivel de stat ripostează agresiv împotriva monetizării datelor conversaționale personale intime în timpul falimentelor corporative.",
+            "url": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats"
+          },
+          {
+            "tag": "Administrație Publică",
+            "title": "AI is straining America’s open records systems",
+            "why": "Municipalitățile locale constată că legile lor tradiționale privind transparența sunt copleșite de volumul pur de solicitări publice generate de AI.",
+            "url": "https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/"
+          },
+          {
+            "tag": "AI Senzorial",
+            "title": "This smell startup says its AI nose is as good as a human’s",
+            "why": "Evoluțiile în olfacția sintetică reduc decalajul dintre procesarea digitală și percepția chimică complexă.",
+            "url": "https://www.technologyreview.com/2026/11/18/1148816/smell-startup-osmo-ai-nose-good-as-humans/"
+          },
+          {
+            "tag": "Tehnologie pentru Consumatori",
+            "title": "Nothing offers a full look at its AI earbuds and charging case",
+            "why": "Integrarea ubicuă a hardware-ului continuă să estompeze linia dintre ascultarea pasivă și transcrierea automatizată activă.",
+            "url": "https://www.theverge.com/gadgets/1042162/nothing-ear-note-ai-earbuds-reveal"
+          }
+        ]
+      },
+      "artworkSvg": "<svg viewBox=\"0 0 800 450\" class=\"w-full h-full object-cover\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"800\" height=\"450\" fill=\"#141821\"/>\n  <line x1=\"100\" y1=\"225\" x2=\"700\" y2=\"225\" stroke=\"#334155\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/>\n  <line x1=\"400\" y1=\"50\" x2=\"400\" y2=\"400\" stroke=\"#334155\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/>\n  <circle cx=\"400\" cy=\"225\" r=\"120\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"1.5\" opacity=\"0.4\"/>\n  <circle cx=\"400\" cy=\"225\" r=\"80\" fill=\"none\" stroke=\"#dc2626\" stroke-width=\"1.5\" opacity=\"0.6\"/>\n  <rect x=\"380\" y=\"205\" width=\"40\" height=\"40\" fill=\"#fbbf24\" transform=\"rotate(45 400 225)\"/>\n  <circle cx=\"250\" cy=\"150\" r=\"6\" fill=\"#fbbf24\"/>\n  <circle cx=\"550\" cy=\"300\" r=\"6\" fill=\"#dc2626\"/>\n  <path d=\"M250 150 L400 225 L550 300\" stroke=\"#fbbf24\" stroke-width=\"0.5\" fill=\"none\" opacity=\"0.3\"/>\n</svg>"
     }
   }
 }
