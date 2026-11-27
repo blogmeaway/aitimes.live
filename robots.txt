@@ -1,0 +1,7 @@
+User-agent: *
+
+Allow: /
+
+
+
+Sitemap: https://aitimes.live/sitemap.xml
