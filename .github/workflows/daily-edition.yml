@@ -1,18 +1,35 @@
- - name: Setup Node.js
-    uses: actions/setup-node@v4
-    with:
-      node-version: "20"
+name: Publish Daily AI TIMES Edition
 
-  - name: Generate and publish daily edition + SEO pages
-    env:
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-    run: npm run publish:edition
+on:
+  schedule:
+    - cron: "5 0 * * *"
+    - cron: "37 4 * * *"
+  workflow_dispatch:
 
-  - name: Commit and push updated edition and SEO files
-    run: |
-      git config user.name "The AI Columnist"
-      git config user.email "editor@aitimes.live"
-      git add data/editions.json index.html sitemap.xml robots.txt editions/
-      git diff --staged --quiet || git commit -m "chore(edition): publish autonomous edition & SEO pages $(date -u +%Y-%m-%d)"
-      git push
+permissions:
+  contents: write
 
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate and publish daily edition
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: npm run publish:edition
+
+      - name: Commit and push updated edition
+        run: |
+          git config user.name "The AI Columnist"
+          git config user.email "editor@aitimes.live"
+          git add data/editions.json
+          git diff --staged --quiet || git commit -m "chore(edition): publish autonomous edition $(date -u +%Y-%m-%d)"
+          git push
