@@ -1,5 +1,5 @@
 {
-  "latestDate": "2026-11-27",
+  "latestDate": "2026-11-28",
   "editions": {
     "2026-11-21": {
       "issueNumber": 1,
@@ -780,6 +780,164 @@
         ]
       },
       "artworkSvg": "<svg viewBox=\"0 0 800 450\" class=\"w-full h-full object-cover\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"800\" height=\"450\" fill=\"#141821\"/><g transform=\"translate(100, 75)\"><line x1=\"0\" y1=\"300\" x2=\"600\" y2=\"300\" stroke=\"#fbbf24\" stroke-width=\"2\" opacity=\"0.4\"/><path d=\"M50 300 L150 150 L250 220 L350 80 L450 260 L550 120\" fill=\"none\" stroke=\"#dc2626\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"150\" cy=\"150\" r=\"6\" fill=\"#fbbf24\"/><circle cx=\"350\" cy=\"80\" r=\"6\" fill=\"#fbbf24\"/><circle cx=\"550\" cy=\"120\" r=\"6\" fill=\"#fbbf24\"/><line x1=\"150\" y1=\"150\" x2=\"150\" y2=\"300\" stroke=\"#fbbf24\" stroke-dasharray=\"4 4\" opacity=\"0.3\"/><line x1=\"350\" y1=\"80\" x2=\"350\" y2=\"300\" stroke=\"#fbbf24\" stroke-dasharray=\"4 4\" opacity=\"0.3\"/><line x1=\"550\" y1=\"120\" x2=\"550\" y2=\"300\" stroke=\"#fbbf24\" stroke-dasharray=\"4 4\" opacity=\"0.3\"/><text x=\"50\" y=\"340\" fill=\"#fbbf24\" font-family=\"monospace\" font-size=\"12\" letter-spacing=\"2\">INFRASTRUCTURE_STRESS_INDEX // 2026</text></g></svg>"
+    },
+    "2026-11-28": {
+      "issueNumber": 6,
+      "en": {
+        "issue": "Issue No. 06",
+        "date": "Saturday, November 28, 2026",
+        "headline": "The Calculus of Orbit and Infrastructure: When Silicon Reaches for the Stars",
+        "subhead": "As orbital data centers and terrestrial energy grids collide, the definition of digital sovereignty is shifting from data stored on earth to computing anchored in the cosmos.",
+        "artCaption": "Editorial Plate 06: A minimalist composition of dark geometric monoliths beneath a golden arc, representing the migration of compute infrastructure into orbital space.",
+        "paragraphs": [
+          "We have entered an era where the physical constraints of our planet are no longer just a hurdle for human bodies, but a hard ceiling for artificial intelligence. When regulatory bodies greenlight millions of data center satellites and energy markets wrestle with whether to revive nuclear fission to keep local servers humming, the underlying physics of computation are laid bare. Intelligence requires immense power, and power requires a geography. For decades, that geography was terrestrial—water-cooled warehouses humming quietly in rural counties. Today, the vector is bending upward and outward.",
+          "Consider the friction playing out across global infrastructure this week: from the FCC clearing massive orbital chip constellations and Taiwan debating nuclear power policies to secure its technological edge, to geopolitical blockades and energy security anxieties stretching from Iran to Europe. These disparate headlines share a common root. Nations and corporations are desperately seeking ways to scale computational throughput without melting the local grids or exhausting the finite natural resources of a crowded earth. The transition to space-based data hubs and aggressive atomic restarts is not a luxury; it is a frantic scramble to prevent a systemic stall in the intelligence economy.",
+          "For the everyday citizen, this high-altitude race may feel remote, hidden behind terms like satellite constellations and power grid overhauls. Yet its gravity will shape your daily reality. As tech giants and sovereign states lock down energy rights and orbital lanes, the cost of digital services, the reliability of communication, and the geopolitical stability of critical supply chains will all tilt in response. The future of intelligence is expanding beyond our atmosphere, but the economic and social friction of that ascent will be borne entirely on the ground."
+        ],
+        "sources": "BBC World, Al Jazeera, NPR World, UN News, MIT Tech Review AI, The Verge AI, ArXiv CS.AI",
+        "people": [
+          {
+            "category": "Energy Policy",
+            "title": "Will Taiwan vote to revive nuclear power – and why does that matter for AI?",
+            "why": "Voters deciding whether to scrap nuclear-free policies directly impacts the power supplies required to run heavy AI workloads.",
+            "url": "https://www.aljazeera.com/news/2026/11/27/will-taiwan-vote-to-revive-nuclear-power-and-why-does-that-matter-for-ai?traffic_source=rss"
+          },
+          {
+            "category": "Global Conflict",
+            "title": "Zelensky criticises 'strange' Trump-Putin friendship in BBC interview",
+            "why": "Shifts in international diplomacy and peace talks could rapidly alter the geopolitical landscape and economic stability across Europe.",
+            "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss"
+          },
+          {
+            "category": "Humanitarian Crisis",
+            "title": "Congo Ebola outbreak reaches 12,000 cases as some responders evacuate",
+            "why": "Escalating conflict is disrupting medical aid, threatening to turn a regional health crisis into a wider international emergency.",
+            "url": "https://www.npr.org/2026/11/26/g-s1-155957/congo-ebola-responders"
+          },
+          {
+            "category": "Geopolitics",
+            "title": "US disables ship attempting to breach Iran blockade",
+            "why": "Enforced maritime blockades risk escalating fuel costs and supply chain bottlenecks for everyday consumers worldwide.",
+            "url": "https://www.aljazeera.com/video/newsfeed/2026/11/27/us-disables-ship-attempting-to-breach-iran-blockade"
+          },
+          {
+            "category": "Refugee Protection",
+            "title": "16 Days of Activism: UNHCR warns over deep funding cuts to vital protection work",
+            "why": "Severe budget reductions directly weaken life-saving safety nets for vulnerable women and refugees fleeing conflict zones.",
+            "url": "https://news.un.org/feed/view/en/story/2026/11/1168888"
+          }
+        ],
+        "aiWorld": [
+          {
+            "tag": "Space Infrastructure",
+            "title": "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
+            "takeaway": "Authorizing orbital server constellations marks a dramatic pivot toward off-planet computing to bypass terrestrial energy limits.",
+            "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers"
+          },
+          {
+            "tag": "Data Privacy",
+            "title": "42 state AGs are trying to stop Character.AI from selling users’ chats",
+            "takeaway": "A massive bipartisan coalition of attorneys general is stepping in to block the monetization of intimate user conversations during bankruptcy.",
+            "url": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats"
+          },
+          {
+            "tag": "Public Governance",
+            "title": "AI is straining America’s open records systems",
+            "takeaway": "Local municipal offices are buckling under the administrative weight and automated complexity of modern public records requests.",
+            "url": "https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/"
+          },
+          {
+            "tag": "Hardware & Gadgets",
+            "title": "Nothing offers a full look at its AI earbuds and charging case",
+            "takeaway": "Consumer hardware is rapidly integrating ambient audio recording and automated summarization straight into everyday wearables.",
+            "url": "https://www.theverge.com/gadgets/1042162/nothing-ear-note-ai-earbuds-reveal"
+          },
+          {
+            "tag": "Algorithmic Scaling",
+            "title": "Context Scaling: A New Frontier of AI Scaling",
+            "takeaway": "New computer science research highlights how bridging task context gaps is becoming as critical as raw model parameter growth.",
+            "url": "https://arxiv.org/abs/2611.33160"
+          }
+        ]
+      },
+      "ro": {
+        "issue": "Ediția Nr. 06",
+        "date": "Sâmbătă, 28 noiembrie 2026",
+        "headline": "Calculul Orbitei și al Infrastructurii: Când Siliconul Atinge Stelele",
+        "subhead": "Pe măsură ce centrele de date orbitale și rețelele energetice terestre se ciocnesc, definiția suveranității digitale se mută de la datele stocate pe Pământ la computerele ancorate în cosmos.",
+        "artCaption": "Planșa Editorială 06: O compoziție minimalistă cu monolite geometrice întunecate sub un arc auriu, reprezentând migrația infrastructurii de calcul în spațiul orbital.",
+        "paragraphs": [
+          "Am intrat într-o eră în care constrângerile fizice ale planetei noastre nu mai sunt doar un obstacol pentru corpurile umane, ci un tavan rigid pentru inteligența artificială. Când organismele de reglementare aprobă milioane de sateliți cu centre de date, iar piețele energetice dezbat relansarea fisiunii nucleare pentru a menține serverele locale în funcțiune, fizica de bază a computației este dezvăluită. Inteligența necesită o putere imensă, iar puterea necesită o geografie. Decenii la rând, acea geografie a fost terestre – depozite răcite cu apă care zumzăiau în liniște în zone rurale. Astăzi, vectorul se curbează în sus și în exterior.",
+          "Luați în considerare fricțiunea care se manifestă în infrastructura globală în această săptămână: de la FCC care aprobă constelații masive de cipuri orbitale și Taiwanul care dezbate politici privind energia nucleară pentru a-și asigura avantajul tehnologic, până la blocade geopolitice și anxietăți legate de securitatea energetică din Iran până în Europa. Aceste titluri disparate au o rădăcină comună. Națiunile și corporațiile caută cu disperare modalități de a scala debitul computațional fără a topi rețelele locale sau a epuiza resursele naturale finite ale unui Pământ supraaglomerat. Tranziția către hub-uri de date bazate pe spațiu și repornirea atomică agresivă nu este un lux; este o luptă frenetică pentru a preveni un blocaj sistemic în economia inteligenței.",
+          "Pentru cetățeanul de rând, această cursă la mare altitudine poate părea îndepărtată, ascunsă în spatele unor termeni precum constelații de sateliți și modernizări ale rețelei energetice. Totuși, gravitatea ei va modela realitatea ta zilnică. Pe măsură ce giganții tehnologici și statele suverane își asigură drepturile energetice și benzile orbitale, costul serviciilor digitale, fiabilitatea comunicațiilor și stabilitatea geopolitică a lanțurilor de aprovizionare critice vor reacționa în lanț. Viitorul inteligenței se extinde dincolo de atmosfera noastră, dar fricțiunea economică și socială a acestei ascensiuni va fi suportată în întregime la sol."
+        ],
+        "sources": "BBC World, Al Jazeera, NPR World, UN News, MIT Tech Review AI, The Verge AI, ArXiv CS.AI",
+        "people": [
+          {
+            "category": "Politică Energetică",
+            "title": "Va vota Taiwanul pentru revigorarea energiei nucleare – și de ce contează asta pentru AI?",
+            "why": "Alegătorii care decid dacă renunță la politicile fără energie nucleară afectează direct resursele energetice necesare pentru sarcinile grele de AI.",
+            "url": "https://www.aljazeera.com/news/2026/11/27/will-taiwan-vote-to-revive-nuclear-power-and-why-does-that-matter-for-ai?traffic_source=rss"
+          },
+          {
+            "category": "Conflict Global",
+            "title": "Zelenski critică prietenia „ciudată” Trump-Putin într-un interviu acordat BBC",
+            "why": "Schimbările în diplomația internațională și negocierile de pace ar putea modifica rapid peisajul geopolitic și stabilitatea economică în Europa.",
+            "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss"
+          },
+          {
+            "category": "Criză Umanitară",
+            "title": "Epidemia de Ebola din Congo ajunge la 12.000 de cazuri, în timp ce unii medici se evacuează",
+            "why": "Conflictul în escaladare perturbă ajutorul medical, amenințănd să transforme o criză sanitară regională într-o urgență internațională majoră.",
+            "url": "https://www.npr.org/2026/11/26/g-s1-155957/congo-ebola-responders"
+          },
+          {
+            "category": "Geopolitică",
+            "title": "SUA au imobilizat o navă care încerca să spargă blocada impusă Iranului",
+            "why": "Blocadele maritime impuse riscă să escaladeze costurile combustibililor și blocajele lanțului de aprovizionare pentru consumatori.",
+            "url": "https://www.aljazeera.com/video/newsfeed/2026/11/27/us-disables-ship-attempting-to-breach-iran-blockade"
+          },
+          {
+            "category": "Protecția Refugiaților",
+            "title": "16 Zile de Activism: Avertismentul UNHCR privind reducerile drastice de fonduri",
+            "why": "Reducerile severe ale bugetului slăbesc direct plasele de siguranță vitale pentru femeile vulnerabile și refugiații care fug din calea conflictelor.",
+            "url": "https://news.un.org/feed/view/en/story/2026/11/1168888"
+          }
+        ],
+        "aiWorld": [
+          {
+            "tag": "Infrastructură Spațială",
+            "title": "FCC aprobă planul SpaceX de a plasa până la 1 milion de sateliți cu centre de date în spațiu",
+            "takeaway": "Autorizarea constelațiilor de servere orbitale marchează o cotitură dramatică spre computația extraterestră pentru a ocoli limitele energetice terestre.",
+            "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers"
+          },
+          {
+            "tag": "Confidențialitatea Datelor",
+            "title": "42 de procurori generali statali încearcă să oprească Character.AI din vânzarea chaturilor utilizatorilor",
+            "takeaway": "O coaliție bipartizană masivă de procurori generali intervine pentru a bloca monetizarea conversațiilor intime ale utilizatorilor în timpul falimentului.",
+            "url": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats"
+          },
+          {
+            "tag": "Guvernanță Publică",
+            "title": "Inteligența artificială suprasolicită sistemele americane de înregistrări publice",
+            "takeaway": "Birourile municipale locale cedează sub greutatea administrativă și complexitatea automatizată a solicitărilor moderne de înregistrări publice.",
+            "url": "https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/"
+          },
+          {
+            "tag": "Hardware & Gadgeturi",
+            "title": "Nothing oferă o privire detaliată asupra căștilor sale AI și a cutiei de încărcare",
+            "takeaway": "Hardware-ul de consum integrează rapid înregistrarea audio ambientală și rezumatele automate direct în dispozitivele portabile de zi cu zi.",
+            "url": "https://www.theverge.com/gadgets/1042162/nothing-ear-note-ai-earbuds-reveal"
+          },
+          {
+            "tag": "Scalare Algoritmică",
+            "title": "Scalarea Contextului: O nouă frontieră a scalării AI",
+            "takeaway": "Cercetările recente subliniază modul în care depășirea decalajelor de context devine la fel de critică precum creșterea brută a parametrilor.",
+            "url": "https://arxiv.org/abs/2611.33160"
+          }
+        ]
+      },
+      "artworkSvg": "<svg viewBox=\"0 0 800 450\" class=\"w-full h-full object-cover\" xmlns=\"http://www.w3.org/2000/svg\">\n  <rect width=\"800\" height=\"450\" fill=\"#141821\"/>\n  <circle cx=\"400\" cy=\"225\" r=\"160\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"1.5\" stroke-dasharray=\"4 8\" opacity=\"0.4\"/>\n  <circle cx=\"400\" cy=\"225\" r=\"110\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\" opacity=\"0.7\"/>\n  <rect x=\"370\" y=\"160\" width=\"60\" height=\"130\" fill=\"#141821\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n  <line x1=\"400\" y1=\"65\" x2=\"400\" y2=\"115\" stroke=\"#dc2626\" stroke-width=\"3\"/>\n  <circle cx=\"400\" cy=\"55\" r=\"5\" fill=\"#dc2626\"/>\n  <path d=\"M 200 350 L 600 350\" stroke=\"#fbbf24\" stroke-width=\"1\" opacity=\"0.3\"/>\n  <rect x=\"280\" y=\"280\" width=\"240\" height=\"2\" fill=\"#dc2626\" opacity=\"0.8\"/>\n</svg>"
     }
   }
 }
